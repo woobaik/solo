@@ -5,10 +5,12 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @article = Article.new
   end
 
   def create
-
+    @article = Article.new(article_param)
   end
+
+  
 end
