@@ -1,0 +1,25 @@
+<h2>Edit Ariticle</h2>
+
+<ul>
+  <% if @article.errors.any? %>
+    <% @article.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  <% end %>
+</ul>
+<%= form_for @article do |f| %>
+<p>
+<% f.label :title %>
+Title <br>
+<%= f.text_field :title %>
+</p>
+
+<p>
+<% f.label :description %>
+description <br>
+<%= f.text_area :description %>
+</p>
+<p>
+<%= f.submit "edit!" %>
+</p>
+<% end %>
